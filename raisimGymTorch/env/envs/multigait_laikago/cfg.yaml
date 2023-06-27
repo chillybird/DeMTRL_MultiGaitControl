@@ -1,0 +1,26 @@
+seed: 1
+record_video: yes
+
+environment:
+  render: True
+# just testing commenting
+  num_envs: 100
+  eval_every_n: 100
+  num_threads: 30
+  simulation_dt: 0.0025
+  control_dt: 0.01
+  max_time: 10.0
+  n_reward: 2
+  reward:
+    forwardVel:
+      coeff: 0.3
+    torque:
+      coeff: -8e-5 
+    contactReward:
+      coeff: -0.3
+    yawReward:
+      coeff: -80.0
+
+architecture:
+  policy_net: [128, 128]
+  value_net: [128, 128]
